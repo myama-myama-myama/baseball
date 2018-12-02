@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>baseball</title>
+    <meta charset="UTF-8">
+    <style>
+      #layer {
+	  display: none;
+	  position: fixed;
+	  left: 0px;
+	  top: 0px;
+	  width: 100%;
+	  height: 100%;
+	  background-color:black;
+	  opacity:0.20;
+      }
+      #popup {
+	  display: none;
+	  position: fixed;
+	  left: 50%;
+	  top: 50%;
+	  width: 300px;
+	  height: 200px;
+	  margin-left: -150px;
+	  margin-top: -100px;
+	  background-color:white;
+	  border-radius: 5px;
+	  text-align: center;
+      }
+      .label
+      {
+	  float: left;
+	  background-color: #003;
+	  width:110px;
+	  padding: 10px;
+	  margin:0 20px;
+	  
+	  color:#fff;
+	  text-align: center;
+	  border-bottom: 1px solid #fff;
+	  cursor:pointer;
+      }
+      .elements
+      {
+	  background-color: #CCD9FF;
+	  width:400px;
+	  padding: 10px;
+	  margin:0 20px;
+
+	  display: block;
+      }
+    </style>
+  </head>
+  <!--  <body onload="init()"> -->
+    <body onload="check()"> 
+    <canvas id="canvas1"></canvas>
+
+    <form id="someForm" action="">
+      <div class="label" id="label1">
+	ピッチャー
+      </div>
+      <div class="label" id="label2">
+	バッター
+      </div>
+      <div class="label" id="label3">
+	ランナー
+      </div>
+      <div class="elements" id="elements1">
+	<input type="radio" value="FB" name="radiogroup2" />４球
+	<input type="radio" value="DB" name="radiogroup2" />デッドボール
+	<input type="radio" value="K" name="radiogroup2" />K
+	<input type="radio" value="SO" name="radiogroup2" />SO
+	<input type="radio" value="Kensei" name="radiogroup2" />kensei
+	<input type="radio" value="Bork" name="radiogroup2" />bork
+	<br />
+	<button id="btn1">入力完了</button>
+      </div>
+      <div class="elements" id="elements2">
+	<input type="radio" value="Hit1" name="radiogroup" />ヒット
+	<input type="radio" value="Hit2" name="radiogroup" />２塁打
+	<input type="radio" value="Hit3" name="radiogroup" />３塁打
+	<input type="radio" value="Hit4" name="radiogroup" />満塁打
+	<br />
+	<input type="radio" value="Out1" name="radiogroup" />アウト
+	<input type="radio" value="Out1" name="radiogroup" />アウト	  
+	<input type="radio" value="Out2" name="radiogroup" />ダブルプレー
+	<input type="radio" value="Out3" name="radiogroup" />トリプルプレー
+	<input type="radio" value="OutGisei" name="radiogroup" />犠打
+	<br />
+	<input type="radio" value="Grounder" name="radiogroup2" />ゴロ
+	<input type="radio" value="Liner" name="radiogroup2" />ライナー
+	<input type="radio" value="Fly" name="radiogroup2" />フライ
+	<input type="radio" value="Band" name="radiogroup2" />バンド
+	<input type="radio" value="Inner" name="radiogroup2" />内安打
+	<input type="radio" value="Error" name="radiogroup2" />エラー
+	<br />
+	<button id="btn2">入力完了</button>
+      </div>
+
+      <div class="elements" id="elements3">
+	<input type="radio" value="H1" name="radiogroup3" />steal
+	<input type="radio" value="H2" name="radiogroup3" />steal out
+	<br />
+	<button id="btn3">入力完了</button>	
+      </div>
+
+    </form>
+
+    <canvas id="canvas2"></canvas>
+    <div id="area1"></div>
+    
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="obj.js"></script>
+    <script>
+      function check(){
+	  var storage;
+	  if (window.name !="xyz"){
+	      window.name ="xyz";
+	      init_once();
+	  }
+	  init();
+	  main();
+      }
+    </script>
+  </body>
+</html>
+
+      
