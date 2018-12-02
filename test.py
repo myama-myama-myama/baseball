@@ -12,6 +12,7 @@ def main():
     """
     
     s1_1t(driver)
+    s1_1t(driver)    
     sleep(10)
     
 def click_pitcher_menu(driver,val):
@@ -40,6 +41,7 @@ def s1_1t(driver):
     # hit between C&R, 2out1,3runners
     # out 6_4 grounder
     click_pitcher_menu(driver,'FB')
+    click_pitcher_menu(driver,'K')
     click_pitcher_menu(driver,'K')
     click_pitcher_menu(driver,'K')
 
